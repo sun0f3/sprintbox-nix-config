@@ -7,7 +7,7 @@
   outputs = { nixpkgs } @ inputs: let
     system = "x86_64-linux";
   in {
-    nixosConfiguraions.box-727973 = nixpkgs.lib.nixosSystem {
+    nixosConfiguraions.sb1 = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = inputs // { system = system; };
         modules = [
