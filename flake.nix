@@ -23,22 +23,22 @@
             };
           }
           home-manager.nixosModules.home-manager
-          #{
+          {
           #  home-manager.useGlobalPkgs = true;
           #  home-manager.useUserPackages = true;
-          #  home-manager.users.buhduh = {
-          #    programs.git = {
-          #      enable = true;
-          #      attributes = {
-          #        name = "buhduh";
-          #        email= "buhduh@buhduh.ru";
-          #      };
-          #      aliases = {
-          #        st = "status";
-          #      };
-          #    };
-          #  };
-          #}
+            home-manager.users.buhduh = {
+              programs.git = {
+                enable = true;
+                attributes = {
+                  name = "buhduh";
+                  email= "buhduh@buhduh.ru";
+                };
+                aliases = {
+                  st = "status";
+                };
+              };
+            };
+          }
         ];
     };
   };
