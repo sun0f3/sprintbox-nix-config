@@ -27,14 +27,18 @@
           #  home-manager.useUserPackages = true;
             home-manager.users.buhduh = {pkgs, ...} : {
 
-              home.packages = [ pkgs.atool pkgs.httpie ];
               home.stateVersion = "22.11";
+              programs.home-manager.enable = true;
+              home.packages = with pkgs; [
+                gnumake
+                fd
+                ripgrep 
+              ];
+
               programs.git = {
                 enable = true;
-                attributes = [
-                  "name= buhduh"
-                  "email=buhduh@buhduh.ru"
-                ];
+                userName = "BuhDuh";
+                userEmail = "buhduh@buhduh.ru";
                 aliases = {
                   st = "status";
                 };
