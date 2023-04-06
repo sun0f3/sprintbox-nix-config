@@ -49,7 +49,7 @@
             home.stateVersion = "22.11";
             programs.home-manager.enable = true;
             home.packages = with pkgs; [
-              unstable.ruby_3_2
+              nixpkgs-unstable.ruby_3_2
               gnumake
               fd
               ripgrep
