@@ -39,7 +39,7 @@
         {
           #  home-manager.useGlobalPkgs = true;
           #  home-manager.useUserPackages = true;
-          home-manager.users.buhduh = {pkgs, nixpkgs-stable} : {
+          home-manager.users.buhduh = {pkgs, ...} : {
 
             home.stateVersion = "22.11";
             programs.home-manager.enable = true;
