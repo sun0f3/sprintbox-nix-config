@@ -7,7 +7,7 @@
   networking.firewall = {
     enable = true;
     allowPing = true;
-    allowedTCPPorts = [ 22 80 443 ];
+    allowedTCPPorts = [ 22 80 443 3000];
     allowedUDPPortRanges = [
       { from = 4000; to = 4007; }
       { from = 8000; to = 8010; }
