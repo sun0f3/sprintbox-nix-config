@@ -13,7 +13,7 @@
       Restart = "always";
     };
 
-    wantedBy = [ 'multi-user.target'];
+    wantedBy = [ "multi-user.target" ];
 
   };
 
