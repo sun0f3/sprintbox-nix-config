@@ -15,6 +15,14 @@
         modules = [
           ./configuration.nix
           {
+            services.nginx.enable = true;
+            services.nginx.virtualHosts."buhduh.ru" = {
+              addSSL = true;
+              enableACME = true;
+              root = "/var/www/buhduh.ru"
+            };
+          }
+          {
             users.users.buhduh = {
               isNormalUser = true;
 	      extraGroups  = [ "wheel" "networkmanager" ];
