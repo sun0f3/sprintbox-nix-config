@@ -2,7 +2,7 @@
   systemd.services.puma = {
     enable = true;
     description = "Puma HTTP Server";
-    after = [ 'network.target'];
+    after = [ "network.target" ];
     path = ["/home/buhduh/app"];
 
     serviceConfig =  {
