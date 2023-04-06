@@ -48,7 +48,7 @@
               gnumake
               fd
               ripgrep
-              python
+              python311
             ];
 
             programs.git = {
