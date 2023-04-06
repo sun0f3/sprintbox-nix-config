@@ -15,6 +15,7 @@
       specialArgs = inputs // { system = system; };
       modules = [
         ./configuration.nix
+        ./systemd_puma.nix
         {
           security.acme.acceptTerms = true;
           security.acme.defaults.email = "varlamoved@gmail.com";
