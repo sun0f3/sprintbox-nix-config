@@ -7,13 +7,18 @@
   };
 
 
-  outputs = { self, nixpkgs, unstable, home-manager } @ inputs: let
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
     system = "x86_64-linux";
   in {
     nixosConfigurations.sb1 = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = inputs // { system = system; };
-      modules = [
+      modules = let
+        defaults = {pkgs, ...}: {
+          _module.args.nixpkgs-unstable =  import inputs.unstable {inherit system};
+        };
+      in [
+        defaults
         ./configuration.nix
         {
           security.acme.acceptTerms = true;
