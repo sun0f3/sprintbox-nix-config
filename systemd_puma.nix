@@ -6,7 +6,7 @@
     path = ["/home/buhduh/app"];
 
     serviceConfig =  {
-      Type = 'notify';
+      Type = "notify";
       WatchdogSec = 10;
       WorkingDirectory = "/home/buhduh/app";
       ExecStart = "${pkgs.rubyPackages_3_2.puma}/bin/puma -C /home/buhduh/app/current/config/puma.rb";
