@@ -14,9 +14,15 @@
       inherit system;
       specialArgs = inputs // { system = system; };
       modules = [
+        ./hardware-configuration.nix
+        ./networking.nix # generated at runtime by nixos-infect
         ./configuration.nix
         ./systemd_puma.nix
         ./postgresql.nix
+        ./git.nix
+        {
+          environment.systemPackages = [ pkgs.gnumake pkgs.ruby_3_2 ];
+        }
         {
           security.acme.acceptTerms = true;
           security.acme.defaults.email = "varlamoved@gmail.com";
@@ -46,7 +52,6 @@
             home.stateVersion = "22.11";
             programs.home-manager.enable = true;
             home.packages = with pkgs; [
-              ruby_3_2
               gnumake
               fd
               ripgrep
