@@ -49,6 +49,7 @@
               fd
               ripgrep
               python311
+              neofetch
             ];
 
             programs.git = {
