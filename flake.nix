@@ -15,6 +15,7 @@
         modules = [
           ./configuration.nix
           {
+            security.acme.acceptTerms = true;
             services.nginx.enable = true;
             services.nginx.virtualHosts."buhduh.ru" = {
               addSSL = true;
