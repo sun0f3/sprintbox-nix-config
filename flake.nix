@@ -20,7 +20,7 @@
         ./systemd_puma.nix
         ./postgresql.nix
         ./git.nix
-        {
+        {pkgs, ...} : {
           environment.systemPackages = [ pkgs.gnumake pkgs.ruby_3_2 ];
         }
         {
