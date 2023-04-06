@@ -14,7 +14,7 @@
         specialArgs = inputs // { system = system; };
         modules = [
           ./configuration.nix
-          { 
+          {
             users.users.buhduh = {
               isNormalUser = true;
 	      extraGroups  = [ "wheel" "networkmanager" ];
@@ -32,7 +32,7 @@
               home.packages = with pkgs; [
                 gnumake
                 fd
-                ripgrep 
+                ripgrep
               ];
 
               programs.git = {
