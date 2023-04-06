@@ -9,7 +9,15 @@
 
   boot.cleanTmpDir = true;
   networking.hostName = "box-727973";
-  networking.firewall.allowPing = true;
+  networking.firewall = {
+    enable = true;
+    allowPing = true;
+    allowedTCPPorts = [ 80 443 ];
+    allowedUDPPortRanges = [
+      { from = 4000; to = 4007; }
+      { from = 8000; to = 8010; }
+    ];
+  };
   services.openssh.enable = true;
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOq2y6ogY9D8fPo0TsabNBDKZB6jLE/j76cuI6b5+EMG varlamoved@yandex.ru" 
