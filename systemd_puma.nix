@@ -3,7 +3,8 @@
     enable = true;
     description = "Puma HTTP Server";
     after = [ "network.target" ];
-    path = ["/home/buhduh/app"];
+    path = ["${pkgs.ruby_3_2}" "/home/buhduh/app"];
+
 
     serviceConfig =  {
       Type = "notify";
