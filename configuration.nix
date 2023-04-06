@@ -45,8 +45,5 @@
       CREATE DATABASE nixcloud;
       GRANT ALL PRIVILEGES ON DATABASE nixcloud TO nixcloud;
     '';
-   
   };
-
-
 }
