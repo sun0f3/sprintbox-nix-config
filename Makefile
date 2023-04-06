@@ -4,3 +4,6 @@ pull:
 	git pull
 up: pull build
 
+clean:
+	nix-store --gc
+
