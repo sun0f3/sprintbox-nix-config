@@ -7,6 +7,9 @@
       ruby_3_2
     ];
 
+    environment= {
+      RAILS_ENV="production";
+    };
 
     serviceConfig =  {
       Type = "notify";
