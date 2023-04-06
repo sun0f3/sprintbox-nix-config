@@ -20,9 +20,9 @@
         ./systemd_puma.nix
         ./postgresql.nix
         ./git.nix
-        {pkgs, ...} : {
+        ({ pkgs, ... } : {
           environment.systemPackages = [ pkgs.gnumake pkgs.ruby_3_2 ];
-        }
+        })
         {
           security.acme.acceptTerms = true;
           security.acme.defaults.email = "varlamoved@gmail.com";
