@@ -8,6 +8,6 @@
     root = "/var/www/buhduh.ru";
   };
 
-  services.nginx.upstreams.buhduh.servers = { unix:///tmp/puma.sock = { };};
+  services.nginx.upstreams.buhduh.servers = { "unix:///tmp/puma.sock" = { };};
 
 }
