@@ -19,7 +19,7 @@
             services.nginx.virtualHosts."buhduh.ru" = {
               addSSL = true;
               enableACME = true;
-              root = "/var/www/buhduh.ru"
+              root = "/var/www/buhduh.ru";
             };
           }
           {
