@@ -15,7 +15,7 @@
       specialArgs = inputs // { system = system; };
       modules = let
         defaults = {pkgs, ...}: {
-          _module.args.nixpkgs-unstable =  import inputs.unstable {inherit system};
+          _module.args.nixpkgs-unstable =  import inputs.unstable {inherit system; };
         };
       in [
         defaults
