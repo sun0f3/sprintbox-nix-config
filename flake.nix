@@ -1,12 +1,13 @@
 {
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-22.11";
+    unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
 
-  outputs = { self, nixpkgs, home-manager } @ inputs: let
+  outputs = { self, nixpkgs, unstable, home-manager } @ inputs: let
     system = "x86_64-linux";
   in {
     nixosConfigurations.sb1 = nixpkgs.lib.nixosSystem {
@@ -43,6 +44,7 @@
             home.stateVersion = "22.11";
             programs.home-manager.enable = true;
             home.packages = with pkgs; [
+              unstable.ruby_3_2
               gnumake
               fd
               ripgrep
