@@ -1,7 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-22.11";
-    unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "nixpkgs/nixos-22.11";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -13,12 +13,7 @@
     nixosConfigurations.sb1 = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = inputs // { system = system; };
-      modules = let
-        defaults = {pkgs, ...}: {
-          _module.args.nixpkgs-unstable =  import inputs.unstable {inherit system; };
-        };
-      in [
-        defaults
+      modules = [
         ./configuration.nix
         {
           security.acme.acceptTerms = true;
@@ -44,12 +39,12 @@
         {
           #  home-manager.useGlobalPkgs = true;
           #  home-manager.useUserPackages = true;
-          home-manager.users.buhduh = {pkgs, ...} : {
+          home-manager.users.buhduh = {pkgs, nixpkgs-stable} : {
 
             home.stateVersion = "22.11";
             programs.home-manager.enable = true;
             home.packages = with pkgs; [
-              nixpkgs-unstable.ruby_3_2
+              ruby_3_2
               gnumake
               fd
               ripgrep
