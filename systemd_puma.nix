@@ -11,6 +11,7 @@
       WorkingDirectory = "/home/buhduh/app";
       ExecStart = "/home/buhduh/bin/bundle exec puma -C /home/buhduh/app/current/config/puma.rb";
       Restart = "always";
+      User = "buhduh";
     };
 
     wantedBy = [ "multi-user.target" ];
