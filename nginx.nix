@@ -9,7 +9,7 @@
       #   addSSL = true;
       #   enableACME = true;
       root = "/home/buhduh/app/current/public";
-      location."/" = {
+      locations."/" = {
         recommendedProxySettings = true;
         extraConfig  = ''
             if (-f $request_filename) {
