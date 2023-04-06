@@ -15,7 +15,7 @@
       Type = "notify";
       WatchdogSec = 10;
       WorkingDirectory = "/home/buhduh/app/current";
-      ExecStart = "/home/buhduh/bin/bundle exec puma -C /home/buhduh/app/current/config/puma.rb";
+      ExecStart = "/home/buhduh/bin/puma -C /home/buhduh/app/current/config/puma.rb";
       Restart = "always";
       User = "buhduh";
     };
