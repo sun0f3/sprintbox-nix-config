@@ -11,26 +11,26 @@
       #   enableACME = true;
       root = "/home/buhduh/app/current/public";
       locations."/" = {
-        recommendedProxySettings = true;
+        #recommendedProxySettings = true;
         extraConfig  = ''
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $http_host;
-        if (-f $request_filename) {
-          break;
-        }
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header Host $http_host;
+          if (-f $request_filename) {
+            break;
+          }
 
-        if (-f $request_filename/index.html) {
-          rewrite (.*) $1/index.html break;
-        }
+          if (-f $request_filename/index.html) {
+            rewrite (.*) $1/index.html break;
+          }
 
-        if (-f $request_filename.html) {
-          rewrite (.*) $1.html break;
-        }
+          if (-f $request_filename.html) {
+            rewrite (.*) $1.html break;
+          }
 
-        if (!-f $request_filename) {
-          proxy_pass http://buhduh;
-          break;
-        }
+          if (!-f $request_filename) {
+            proxy_pass http://buhduh;
+            break;
+          }
         '';
       };
       extraConfig = ''
