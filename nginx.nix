@@ -34,7 +34,7 @@
           }
         '';
       };
-      locations."~ \.(ico|css|gif|jpe?g|png|js)(\?[0-9]+)?$\".extraConfig  = ''
+      locations."*~ \.(ico|css|gif|jpe?g|png|js)(\?[0-9]+)?$".extraConfig  = ''
           expires max;
           break;
         '';
