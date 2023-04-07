@@ -38,7 +38,6 @@
           expires max;
           break;
         '';
-      };
       extraConfig = ''
         index index.html;
         try_files $uri $uri/ =404;
