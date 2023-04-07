@@ -10,18 +10,18 @@
       #   addSSL = true;
       #   enableACME = true;
       root = "/home/buhduh/app/current/public";
-      locations."/" = {
-        #recommendedProxySettings = true;
-        extraConfig  = ''
+      locations."@app".extraConfig = ''
+        proxy_pass http://buhduh;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_redirect off;
+      '';
+      extraConfig = ''
         try_files $uri/index.html $uri @app;
-
-        location @app {
-            proxy_pass http://buhduh;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header Host $host;
-            proxy_redirect off;
-        }
-        '';
+        error_page 500 502 503 504 /500.html;
+        client_max_body_size 4G;
+        keepalive_timeout 10;
+      '';
       };
     };
   };
