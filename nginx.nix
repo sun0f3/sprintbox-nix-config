@@ -34,9 +34,6 @@
           }
         '';
       };
-      locations."*~ \.(ico|css|gif|jpe?g|png|js)(\?[0-9]+)?$".extraConfig = ''
-          break;
-      '';
       extraConfig = ''
         index index.html;
         try_files $uri $uri/ =404;
