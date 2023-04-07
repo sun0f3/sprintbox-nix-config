@@ -4,7 +4,8 @@
 
   services.nginx = {
     enable = true;
-    upstreams.buhduh.servers."unix:///tmp/puma.sock" = {};
+    #upstreams.buhduh.servers."unix:///tmp/puma.sock" = {};
+    upstreams.buhduh.servers."127.0.0.1:3000" = {};
     virtualHosts."buhduh.ru" = {
       #   addSSL = true;
       #   enableACME = true;
@@ -12,23 +13,25 @@
       locations."/" = {
         recommendedProxySettings = true;
         extraConfig  = ''
-            if (-f $request_filename) {
-              break;
-            }
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        if (-f $request_filename) {
+          break;
+        }
 
-            if (-f $request_filename/index.html) {
-              rewrite (.*) $1/index.html break;
-            }
+        if (-f $request_filename/index.html) {
+          rewrite (.*) $1/index.html break;
+        }
 
-            if (-f $request_filename.html) {
-              rewrite (.*) $1.html break;
-            }
+        if (-f $request_filename.html) {
+          rewrite (.*) $1.html break;
+        }
 
-            if (!-f $request_filename) {
-              proxy_pass http://buhduh;
-              break;
-            }
-         '';
+        if (!-f $request_filename) {
+          proxy_pass http://buhduh;
+          break;
+        }
+        '';
       };
       extraConfig = ''
         index index.html;
