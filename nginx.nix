@@ -6,6 +6,7 @@
     enable = true;
     #upstreams.buhduh.servers."unix:///tmp/puma.sock" = {};
     upstreams.buhduh.servers."127.0.0.1:3000" = {};
+    forceSSL = true;
     virtualHosts."buhduh.ru" = {
       addSSL = true;
       enableACME = true;
