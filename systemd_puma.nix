@@ -15,7 +15,7 @@
       Type = "notify";
       WatchdogSec = 10;
       WorkingDirectory = "/var/www/buhduh/current";
-      ExecStart = "/home/buhduh/bin/puma -C /var/www/buhduh/current/config/puma.rb";
+      ExecStart = "/var/www/buhduh/current/bin/puma -C /var/www/buhduh/current/config/puma.rb";
       Restart = "always";
       User = "buhduh";
     };
@@ -23,5 +23,4 @@
     wantedBy = [ "multi-user.target" ];
 
   };
-
 }
