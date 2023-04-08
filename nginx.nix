@@ -7,9 +7,9 @@
     #upstreams.buhduh.servers."unix:///tmp/puma.sock" = {};
     upstreams.buhduh.servers."127.0.0.1:3000" = {};
     virtualHosts."buhduh.ru" = {
-      addSSL = true;
-      enableACME = true;
+      #addSSL = true;
       forceSSL = true;
+      enableACME = true;
       root = "/var/www/buhduh/current/public";
       locations."@app".extraConfig = ''
         proxy_pass http://buhduh;
