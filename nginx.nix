@@ -24,4 +24,6 @@
       '';
     };
   };
+
+  systemd.services.nginx.serviceConfig.ProtectHome = "read-only";
 }
