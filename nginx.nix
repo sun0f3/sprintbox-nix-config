@@ -9,7 +9,7 @@
     virtualHosts."buhduh.ru" = {
       #   addSSL = true;
       #   enableACME = true;
-      root = "/home/buhduh/app/current/public";
+      root = "/var/www/buhduh/current/public";
       locations."@app".extraConfig = ''
         proxy_pass http://buhduh;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
