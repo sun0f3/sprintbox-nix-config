@@ -25,5 +25,7 @@
     };
   };
 
-  systemd.services.nginx.serviceConfig.ProtectHome = "read-only";
+  #systemd.services.nginx.serviceConfig.ProtectHome = "read-only";
+  systemd.services.nginx.serviceConfig.ProtectHome = lib.mkForce false;
+  systemd.services.nginx.serviceConfig.ProtectSystem = lib.mkForce false;
 }
