@@ -1,6 +1,7 @@
 {
   users.users.buhduh = {
     isNormalUser = true;
+    group = "buhduh";
     extraGroups  = [ "wheel" "networkmanager" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOq2y6ogY9D8fPo0TsabNBDKZB6jLE/j76cuI6b5+EMG varlamoved@yandex.ru"
