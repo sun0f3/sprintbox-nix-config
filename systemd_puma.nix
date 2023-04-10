@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   systemd.services.puma = {
-    enable = true;
+    enable = false;
     description = "Puma HTTP Server";
     after = [ "network.target" ];
     path = with pkgs; [

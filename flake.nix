@@ -21,6 +21,7 @@
         ./postgresql.nix
         ./git.nix
         ./nginx.nix
+        ./unit.nix
         ({ pkgs, ... } : {
           environment.systemPackages = [ pkgs.gnumake pkgs.ruby_3_2 ];
         })
