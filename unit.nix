@@ -1,6 +1,6 @@
 { lib, pkgs, ... }: {
   services.unit = {
-    enable = true;
+    enable = false;
     package = pkgs.unit.override {withRuby_2_7 = false; withRuby_3_1 = true; ruby_3_1 = pkgs.ruby_3_2;};
     config = ''
     {
@@ -34,7 +34,8 @@
     '';
   };
 
-  systemd.services.unit.path = with pkgs; [ ruby_3_2  ];
-  systemd.services.unit.environment."RAILS_ENV" = "production";
-  #systemd.services.unit.environment."GEM_PATH" = "/root/.local/share/gem/ruby/3.2.0";
+  config = mkIf services.unit.enable {
+    systemd.services.unit.path = with pkgs; [ ruby_3_2  ];
+    systemd.services.unit.environment."RAILS_ENV" = "production";
+  };
 }

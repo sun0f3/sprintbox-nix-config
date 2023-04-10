@@ -5,7 +5,7 @@
   services.nginx = {
     enable = true;
     #upstreams.buhduh.servers."unix:///tmp/puma.sock" = {};
-    upstreams.buhduh.servers."127.0.0.1:3001" = {};
+    upstreams.buhduh.servers."127.0.0.1:3000" = {};
     virtualHosts."buhduh.ru" = {
       #addSSL = true;
       forceSSL = true;
