@@ -34,7 +34,7 @@
     '';
   };
 
-  systemd.services.unit.path = with pkgs; [ ruby_3_2 "/run/current-system/sw/bin" ];
+  systemd.services.unit.path = with pkgs; [ ruby_3_2  ];
 
   systemd.services.unit.environment."GEM_PATH" = "/root/.local/share/gem/ruby/3.2.0";
 }
