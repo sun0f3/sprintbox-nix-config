@@ -34,6 +34,5 @@
     '';
   };
 
-  systemd.services.unit.path = with pkgs; [ ruby_3_2 ];
-  systemd.services.unit.serviceConfig.User = "buhduh";
+  systemd.services.unit.path = with pkgs; [ ruby_3_2 "/run/current-system/sw/bin" ];
 }
