@@ -1,5 +1,9 @@
-{ lib, pkgs, config, ... }: {
-  with lib;
+{ lib, pkgs, config, ... }:
+with lib;
+let
+  cfg = config.unit;
+in {
+
   services.unit = {
     enable = false;
     package = pkgs.unit.override {withRuby_2_7 = false; withRuby_3_1 = true; ruby_3_1 = pkgs.ruby_3_2;};
