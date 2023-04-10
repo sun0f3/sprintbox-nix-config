@@ -5,7 +5,7 @@
     config = ''
     {
     "listeners": {
-        "*:443": {
+        "*:3001": {
             "pass": "routes"
         }
     },
