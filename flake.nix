@@ -23,7 +23,10 @@
         ./nginx.nix
         ./unit.nix
         ({ pkgs, ... } : {
-          environment.systemPackages = [ pkgs.gnumake pkgs.ruby_3_2 ];
+          environment.systemPackages = with pkgs; [
+            gnumake
+            ruby_3_2.withPackages(ps: with ps; [bundler])
+          ];
         })
         home-manager.nixosModules.home-manager
         ./user_buhduh.nix
