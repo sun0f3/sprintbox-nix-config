@@ -5,7 +5,7 @@
     config = ''
     {
     "listeners": {
-        "*:3001": {
+        "*:80": {
             "pass": "routes"
         }
     },

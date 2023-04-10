@@ -3,7 +3,7 @@
   security.acme.defaults.email = "varlamoved@gmail.com";
 
   services.nginx = {
-    enable = true;
+    enable = false;
     #upstreams.buhduh.servers."unix:///tmp/puma.sock" = {};
     upstreams.buhduh.servers."127.0.0.1:3001" = {};
     virtualHosts."buhduh.ru" = {
