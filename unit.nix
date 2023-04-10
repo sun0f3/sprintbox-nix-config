@@ -35,6 +35,6 @@
   };
 
   systemd.services.unit.path = with pkgs; [ ruby_3_2  ];
-
-  systemd.services.unit.environment."GEM_PATH" = "/root/.local/share/gem/ruby/3.2.0";
+  systemd.services.unit.environment."RAILS_ENV" = "production";
+  #systemd.services.unit.environment."GEM_PATH" = "/root/.local/share/gem/ruby/3.2.0";
 }
