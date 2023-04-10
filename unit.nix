@@ -3,6 +3,7 @@ with lib;
 let
   cfg = config.unit;
 in {
+  {
 
   services.unit = {
     enable = false;
@@ -43,4 +44,5 @@ in {
     systemd.services.unit.path = with pkgs; [ ruby_3_2  ];
     systemd.services.unit.environment."RAILS_ENV" = "production";
   };
+  }
 }
