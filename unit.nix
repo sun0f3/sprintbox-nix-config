@@ -33,5 +33,5 @@
     }
     '';
   };
-
+  systemd.services.unit.path = with pkgs [ ruby_3_2 ];
 }

@@ -25,7 +25,8 @@
         ({ pkgs, ... } : {
           environment.systemPackages = with pkgs; [
             gnumake
-            (ruby_3_2.withPackages (ps: with ps; [ bundler ]))
+            ruby_3_2
+            #(ruby_3_2.withPackages (ps: with ps; [ bundler ]))
           ];
         })
         home-manager.nixosModules.home-manager
