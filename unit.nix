@@ -3,8 +3,6 @@ with lib;
 let
   cfg = config.unit;
 in {
-  {
-
   services.unit = {
     enable = false;
     package = pkgs.unit.override {withRuby_2_7 = false; withRuby_3_1 = true; ruby_3_1 = pkgs.ruby_3_2;};
@@ -40,9 +38,8 @@ in {
     '';
   };
 
-  config = mkIf config.services.unit.enable {
+  mkIf config.services.unit.enable {
     systemd.services.unit.path = with pkgs; [ ruby_3_2  ];
     systemd.services.unit.environment."RAILS_ENV" = "production";
   };
-  }
 }
