@@ -34,7 +34,7 @@
     '';
   };
 
-  config = mkIf services.unit.enable {
+  config = lib.mkIf services.unit.enable {
     systemd.services.unit.path = with pkgs; [ ruby_3_2  ];
     systemd.services.unit.environment."RAILS_ENV" = "production";
   };
