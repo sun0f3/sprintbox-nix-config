@@ -1,6 +1,7 @@
-{ lib, ... }: {
+{ lib, pkgs, ... }: {
   services.unit = {
     enable = true;
+    package = pkgs.unit.override {withRuby_2_7 = false; withRuby_3_1 = true;};
     config = ''
     {
     "listeners": {
