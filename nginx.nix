@@ -13,7 +13,7 @@
       root = "/var/www/buhduh/current/public";
       locations."@app".extraConfig = ''
         proxy_pass http://buhduh;
-        proxy_set_header Host $host;
+        proxy_set_header Host $http_host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto http;
         proxy_set_header  X-Forwarded-Host $http_host;
