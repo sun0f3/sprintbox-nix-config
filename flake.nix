@@ -19,6 +19,7 @@
         ./configuration.nix
         ./systemd_puma.nix
         ./postgresql.nix
+        ./redis.nix
         ./git.nix
         ./nginx.nix
         ./unit.nix
