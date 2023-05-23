@@ -25,6 +25,7 @@
         ({ pkgs, ... } : {
           environment.systemPackages = with pkgs; [
             gnumake
+            crontab
             ruby_3_2
             #(ruby_3_2.withPackages (ps: with ps; [ bundler ]))
           ];
