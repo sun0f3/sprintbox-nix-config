@@ -6,7 +6,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-
   outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
     system = "x86_64-linux";
   in {
@@ -28,7 +27,7 @@
             gnumake
             cron
             ruby_3_2
-            nodejs_20
+            nodejs
             #(ruby_3_2.withPackages (ps: with ps; [ bundler ]))
           ];
         })
