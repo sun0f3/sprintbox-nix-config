@@ -28,6 +28,7 @@
             cron
             ruby_3_2
             nodejs
+            google-chrome
             #(ruby_3_2.withPackages (ps: with ps; [ bundler ]))
           ];
         })
