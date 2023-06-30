@@ -6,7 +6,6 @@
     path = with pkgs; [
       ruby_3_2
       nodejs
-      nodePackages."puppeteer"
     ];
 
     environment= {
