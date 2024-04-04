@@ -2,6 +2,8 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "22.11";
 
+  nixpkgs.config.allowUnfree = true;
+
   boot.cleanTmpDir = true;
   networking.hostName = "box-727973";
   networking.firewall = {
