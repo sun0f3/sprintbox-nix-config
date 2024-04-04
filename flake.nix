@@ -29,6 +29,7 @@
             ruby_3_2
             nodejs
             google-chrome
+            gcc
             #(ruby_3_2.withPackages (ps: with ps; [ bundler ]))
           ];
         })
